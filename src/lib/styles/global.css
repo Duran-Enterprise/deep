@@ -1,0 +1,45 @@
+:root {
+	/* Colors */
+	--raw-white: 234, 236, 246;
+	--raw-black: 0, 6, 10;
+	--raw-primary: 22, 119, 172;
+	--raw-secondary: 196, 233, 253;
+	--raw-accent: 7, 157, 237;
+	--raw-dark-contrast: 34, 32, 32;
+	--raw-light-contrast: 220, 223, 240;
+
+	--white: rgba(var(--raw-white));
+	--black: rgba(var(--raw-black));
+	--primary: rgba(var(--raw-primary));
+	--secondary: rgba(var(--raw-secondary));
+	--accent: rgba(var(--raw-accent));
+	--dark-contrast: rgba(var(--raw-dark-contrast));
+	--light-contrast: rgba(var(--raw-light-contrast));
+
+	--hover-opacity: 0.9;
+	--hover-brightness: 1.1;
+	--hover-scale: 1.05, 1.05;
+
+	/* Hover Colors */
+	--primary-hover: rgba(var(--raw-primary), var(--hover-opacity));
+	--secondary-light-hover: rgba(var(--raw-light-contrast), var(--hover-opacity));
+	--secondary-dark-hover: rgba(var(--raw-dark-contrast), var(--hover-opacity));
+}
+/* media query for darkmode and light mode */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		background-color: var(--black);
+	}
+}
+
+@media screen and (prefers-color-scheme: light) {
+	:root {
+		background-color: var(--white);
+	}
+}
