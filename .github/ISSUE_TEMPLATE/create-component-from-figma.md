@@ -1,27 +1,25 @@
 ---
 name: Create Component from Figma
 about: For Component Creation
-title: "[Create * component]"
+title: Create _________ component
 labels: enhancement
-assignees: ''
+assignees: DDuran19
 
 ---
 
 <--! Paste component picture here (from Figma)-->
-<--! Ensure that you use tab for the codeblock-->
+
 
 <details>
-<summary>styleguide.css</summary>
+<summary>index.html</summary>
 
-```css
-    :root {
+```html
+    <!DOCTYPE html>
 
-    }
 ```
 </details>
 
 <details>
-
 <summary>style.css</summary>
 
 ```css
@@ -33,11 +31,13 @@ assignees: ''
 </details>
 
 
+
 <details>
-<summary>index.html</summary>
+<summary>styleguide.css</summary>
 
-```html
-    <!DOCTYPE html>
+```css
+    :root {
 
+    }
 ```
 </details>
