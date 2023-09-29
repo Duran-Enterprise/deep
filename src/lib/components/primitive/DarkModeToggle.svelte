@@ -2,24 +2,16 @@
 	import sun from '$lib/assets/misc/sun.png';
 	import moon from '$lib/assets/misc/moon.png';
 
-	import { onMount } from 'svelte';
 	import { darkMode } from '$lib/store';
 
-	let isDarkMode = false;
-
-	onMount(() => {
-		isDarkMode = document.body.classList.contains('dark');
-	});
-
 	function handleToggle() {
-		isDarkMode = !isDarkMode;
-		isDarkMode ? document.body.classList.remove('dark') : document.body.classList.add('dark');
-		darkMode.set(isDarkMode);
+		darkMode.update((isDarkMode) => !isDarkMode);
+		$darkMode ? document.body.classList.add('dark') : document.body.classList.remove('dark');
 	}
 </script>
 
 <button on:click={handleToggle}>
-	<img src={isDarkMode ? sun : moon} alt="Dark Mode Toggle" />
+	<img src={$darkMode ? moon : sun} alt="Dark Mode Toggle" />
 </button>
 
 <style>
