@@ -38,9 +38,6 @@
 		padding: 0;
 		gap: var(--navlinks-gap);
 	}
-	li {
-		list-style: none;
-	}
 	a {
 		text-decoration: none;
 		color: inherit;
