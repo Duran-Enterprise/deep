@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { darkMode } from '$lib/store';
 	import SimpleButton from '../primitive/SimpleButton.svelte';
 	function handleButtonClick() {
 		console.log('clicked');
 	}
-	$: mode = $darkMode ? 'dark' : 'light';
 </script>
 
 <header>

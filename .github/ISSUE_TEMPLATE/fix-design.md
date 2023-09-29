@@ -4,22 +4,21 @@ about: Fix design issues
 title: 'Fix ____ component ____ '
 labels: bug, enhancement
 assignees: ''
-
 ---
 
-Relevant Pictures: 
+Relevant Pictures:
 
-Problem: 
-
+Problem:
 
 Supposed Solution:
 
 Todo:
-- [] 
-- [] 
-- [] 
-- [] 
-- [] 
+
+- []
+- []
+- []
+- []
+- []
 
 Resources:
 [Link1](https://example.com)

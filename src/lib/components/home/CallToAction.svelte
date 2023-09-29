@@ -6,13 +6,13 @@
 		<span>now</span>!
 	</h1>
 	<ul>
-		<li><a href="#">HTML</a></li>
+		<li><a href="/">HTML</a></li>
 		<li>❖</li>
-		<li><a href="#">CSS</a></li>
+		<li><a href="/">CSS</a></li>
 		<li>❖</li>
-		<li><a href="#">Javascript</a></li>
+		<li><a href="/">Javascript</a></li>
 		<li>❖</li>
-		<li><a href="#">Python</a></li>
+		<li><a href="/">Python</a></li>
 	</ul>
 </section>
 
