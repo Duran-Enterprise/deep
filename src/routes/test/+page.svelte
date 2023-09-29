@@ -19,13 +19,27 @@
 <section>
 	<ul>
 		<li>
-			<SimpleCard src={Modularized} alt="Modularized" title="Modularized" />
+			<SimpleCard
+				src={Modularized}
+				alt="Modularized"
+				title="Modularized"
+				description="Learn in modules for flexibility."
+			/>
 		</li>
 		<li>
-			<SimpleCard src={ProjectBased} alt="Project Based" title="Project Based" />
+			<SimpleCard
+				src={ProjectBased}
+				alt="Project Based"
+				title="Project Based"
+				description="Hands-on coding with projects."
+			/>
 		</li>
 		<li>
-			<SimpleCard src={IndustryRelevant} alt="Industry Relevant" title="Industry Relevant" />
+			<SimpleCard
+				src={IndustryRelevant}
+				title="Industry Relevant"
+				description="Skills for tech careers."
+			/>
 		</li>
 	</ul>
 </section>
@@ -43,6 +57,8 @@
 	}
 	ul {
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		gap: 32px;
 	}
 	li {
