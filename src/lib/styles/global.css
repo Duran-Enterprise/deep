@@ -43,3 +43,11 @@
 		background-color: var(--white);
 	}
 }
+body {
+	color: var(--black);
+	background-color: var(--white);
+}
+body.dark {
+	color: var(--white);
+	background-color: var(--black);
+}
