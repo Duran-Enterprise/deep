@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Footer from '$lib/components/Footer.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
 	import { darkMode } from '$lib/store';
 	import '$lib/styles/global.css';
 	import { onMount } from 'svelte';
@@ -12,4 +14,6 @@
 	});
 </script>
 
+<Navbar />
 <slot />
+<Footer />
