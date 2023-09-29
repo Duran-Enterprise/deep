@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SimpleButton from '../primitive/SimpleButton.svelte';
+	import Owl from '$lib/assets/owls/blue-baby-owl.png';
 	function handleButtonClick() {
 		console.log('clicked');
 	}
@@ -16,7 +17,7 @@
 	</section>
 
 	<section class="hero-banner">
-		<img src="src/lib/assets/owls/blue-baby-owl.png" alt="Blue baby owl" width="100%" />
+		<img src={Owl} alt="Blue baby owl" width="100%" />
 	</section>
 </header>
 
@@ -28,10 +29,6 @@
 		height: fit-content;
 		padding-bottom: var(--large-whitespace);
 		text-wrap: balance;
-		/* display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap; */
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		align-items: center;

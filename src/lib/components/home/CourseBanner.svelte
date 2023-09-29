@@ -1,21 +1,23 @@
 <script lang="ts">
 	import SimpleCard from '../primitive/SimpleCard.svelte';
-
+	import Modularized from '$lib/assets/misc/cards/modularized.svg';
+	import ProjectBased from '$lib/assets/misc/cards/project-based.svg';
+	import IndustryRelevant from '$lib/assets/misc/cards/industry-relevant.svg';
 	let courses = [
 		{
 			title: 'Modularized',
 			description: 'Learn in modules for flexibility.',
-			image: 'src/lib/assets/misc/cards/modularized.svg'
+			image: Modularized
 		},
 		{
 			title: 'Project Based',
 			description: 'Hands-on coding with projects.',
-			image: 'src/lib/assets/misc/cards/project-based.svg'
+			image: ProjectBased
 		},
 		{
 			title: 'Industry Relevant',
 			description: 'Skills for tech careers.',
-			image: 'src/lib/assets/misc/cards/industry-relevant.svg'
+			image: IndustryRelevant
 		}
 	];
 </script>
