@@ -3,7 +3,7 @@
 	import Branding from './primitive/Branding.svelte';
 </script>
 
-<nav>
+<nav class="navbar">
 	<Branding />
 
 	<ul class="div">
@@ -18,6 +18,9 @@
 <style>
 	nav {
 		position: sticky;
+		top: 0;
+		left: 0;
+		z-index: 2;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

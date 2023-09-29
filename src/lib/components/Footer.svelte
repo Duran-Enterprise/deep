@@ -19,7 +19,7 @@
 </script>
 
 <div class={$darkMode ? 'dark' : ''}>
-	<footer>
+	<footer class="footer">
 		<section>
 			<Branding type="footer" />
 
@@ -57,6 +57,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap-reverse;
 		margin: 0 auto;
 		width: 100%;
 		max-width: var(--footer-and-header-max-width);
@@ -67,6 +68,7 @@
 		color: var(--white);
 		height: 50vh;
 		display: flex;
+		transition: var(--bg-and-color-transition);
 	}
 	div.dark {
 		background-color: var(--white);

@@ -44,6 +44,7 @@
 		text-align: center;
 		padding: 15px 24px 64px 24px;
 		cursor: auto;
+		transition: var(--bg-and-color-transition);
 	}
 	article.dark > section {
 		background-color: var(--dark-contrast);
