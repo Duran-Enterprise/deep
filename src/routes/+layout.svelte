@@ -3,6 +3,7 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { darkMode } from '$lib/store';
 	import '$lib/styles/global.css';
+	import '$lib/styles/responsive.css';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
