@@ -16,4 +16,7 @@
 		margin-left: var(--medium-whitespace);
 		margin-right: var(--medium-whitespace);
 	}
+	header > section[data-hero-content] > h1 {
+		font-size: var(--medium-font-size);
+	}
 }

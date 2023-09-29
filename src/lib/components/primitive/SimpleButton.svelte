@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { darkMode } from '$lib/store';
 	/**
 	 * Button component.
 	 *
@@ -29,7 +30,6 @@
 	import type { ButtonProps } from '$lib/types/enums/props';
 
 	export let elementType: ButtonProps['elementType'] = 'primary';
-	export let mode: ButtonProps['mode'] = 'light';
 	export let size: ButtonProps['size'] = 'medium';
 	export let disabled: ButtonProps['disabled'] = false;
 	export let text: ButtonProps['text'] = 'Click Me!';
@@ -44,7 +44,9 @@
 </script>
 
 <button
-	class="{elementType} {mode} {size} {customClass}{disabled ? 'disabled' : ''}"
+	class="{elementType} {$darkMode ? 'dark' : 'light'} {size} {customClass}{disabled
+		? 'disabled'
+		: ''}"
 	style={customStyle}
 	on:click={handleButtonClick}
 	aria-label={ariaLabel}
@@ -98,7 +100,7 @@
 	}
 
 	.primary {
-		background-color: var(--primary);
+		background-color: var(--accent);
 		color: var(--black);
 	}
 	.secondary.light {
@@ -125,7 +127,7 @@
 		transform: scale(var(--hover-scale));
 	}
 	.primary:hover {
-		background-color: var(--primary-hover);
-		color: var(--white);
+		background-color: var(--accent-hover);
+		color: white;
 	}
 </style>
