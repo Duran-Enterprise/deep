@@ -13,7 +13,7 @@
 <section>
 	<SimpleButton onclick={handleButtonClick} text="Primary" />
 	<SimpleButton onclick={handleButtonClick} elementType="secondary" text="Secondary" />
-	<SimpleButton onclick={handleButtonClick} elementType="secondary" text="Secondary" mode="dark" />
+	<SimpleButton onclick={handleButtonClick} elementType="secondary" text="Secondary" />
 </section>
 <h1>Test Simple Cards</h1>
 <section>
