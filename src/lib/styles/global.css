@@ -28,17 +28,28 @@
 	--secondary-dark-hover: rgba(var(--raw-dark-contrast), var(--hover-opacity));
 
 	/* Spacing */
-	--footer-and-header-max-width: 1080px;
+	--max-width: 1080px;
+	--footer-and-header-max-width: var(--max-width);
 	--footer-and-header-x-padding: 32px;
 	--navlinks-gap: 32px;
 	--default-gap: 20px;
+	--small-whitespace: 25px;
+	--medium-whitespace: 50px;
+	--large-whitespace: 100px;
+
+	/* Sizes */
+	--large-font-size: 60px;
+	--medium-font-size: 40px;
+	--small-font-size: 20px;
+	/* Transitions */
+	--bg-and-color-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 /* media query for darkmode and light mode */
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	line-height: 130%;
+	line-height: 140%;
 }
 html {
 	font-family: 'Inter', sans-serif;
@@ -57,8 +68,13 @@ html {
 body {
 	color: var(--black);
 	background-color: var(--white);
+	transition: var(--bg-and-color-transition);
 }
 body.dark {
 	color: var(--white);
 	background-color: var(--black);
+}
+
+li {
+	list-style: none;
 }

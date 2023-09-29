@@ -1,0 +1,19 @@
+@media screen and (max-width: 768px) {
+	div > footer.footer {
+		justify-content: center;
+		gap: var(--large-whitespace);
+		transition: 0.3s;
+	}
+	div > footer > section > h1,
+	div > footer > section > p {
+		text-align: center;
+	}
+
+	div > footer > section {
+		justify-content: center;
+	}
+	div > section.course-banner {
+		margin-left: var(--medium-whitespace);
+		margin-right: var(--medium-whitespace);
+	}
+}
