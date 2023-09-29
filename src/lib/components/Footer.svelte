@@ -45,7 +45,7 @@
 	section {
 		display: flex;
 		flex-direction: column;
-		gap: 25px;
+		gap: var(--default-gap);
 	}
 	section[data-right-footer] {
 		text-align: right;
