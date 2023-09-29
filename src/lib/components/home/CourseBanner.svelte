@@ -21,7 +21,7 @@
 </script>
 
 <div>
-	<section class="course-banner">
+	<main class="course-banner">
 		<h1>The D.E.E.P. Project</h1>
 		<p>
 			D.E.E.P. stands for Dedication, Empowerment, Education, and Programming — the foundation of
@@ -34,7 +34,7 @@
 				</li>
 			{/each}
 		</ul>
-	</section>
+	</main>
 </div>
 
 <style>
@@ -52,7 +52,7 @@
 		justify-content: center;
 		gap: var(--navlinks-gap);
 	}
-	section {
+	main {
 		margin: var(--large-whitespace);
 		text-align: center;
 		max-width: var(--max-width);

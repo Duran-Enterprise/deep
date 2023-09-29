@@ -12,7 +12,7 @@
 	div > footer > section {
 		justify-content: center;
 	}
-	div > section.course-banner {
+	div > main.course-banner {
 		margin-left: var(--medium-whitespace);
 		margin-right: var(--medium-whitespace);
 	}
