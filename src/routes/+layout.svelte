@@ -5,8 +5,9 @@
 
 	onMount(() => {
 		let isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-		console.log(isDarkMode);
-		if (isDarkMode) document.body.classList.add('dark');
+		if (isDarkMode) {
+			document.body.classList.add('dark');
+		}
 		darkMode.set(isDarkMode);
 	});
 </script>

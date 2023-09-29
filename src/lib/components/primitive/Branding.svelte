@@ -4,4 +4,4 @@
 	import { darkMode } from '$lib/store';
 </script>
 
-<img src={$darkMode ? lightBranding : darkBranding} alt="Dark Mode Toggle" />
+<img src={$darkMode ? darkBranding : lightBranding} alt="Dark Mode Toggle" />
