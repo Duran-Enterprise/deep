@@ -18,10 +18,15 @@
 
 <style>
 	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		margin: var(--large-whitespace) auto;
 		padding: var(--large-whitespace) auto;
 		max-width: var(--max-width);
 		text-align: center;
+		min-height: 80vh;
 	}
 	h1 {
 		text-align: center;

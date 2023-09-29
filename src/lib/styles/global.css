@@ -2,7 +2,7 @@
 
 :root {
 	/* Colors */
-	--raw-white: 234, 236, 246;
+	--raw-white: 214, 216, 226;
 	--raw-black: 0, 6, 10;
 	--raw-primary: 22, 119, 172;
 	--raw-secondary: 196, 233, 253;
@@ -24,6 +24,7 @@
 
 	/* Hover Colors */
 	--primary-hover: rgba(var(--raw-primary), var(--hover-opacity));
+	--accent-hover: rgba(var(--raw-accent));
 	--secondary-light-hover: rgba(var(--raw-light-contrast), var(--hover-opacity));
 	--secondary-dark-hover: rgba(var(--raw-dark-contrast), var(--hover-opacity));
 

@@ -57,4 +57,8 @@
 		text-align: center;
 		max-width: var(--max-width);
 	}
+	div {
+		display: flex;
+		justify-content: center;
+	}
 </style>
