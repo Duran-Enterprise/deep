@@ -22,9 +22,9 @@
 		align-items: center;
 		justify-content: space-between;
 		height: 62px;
-		max-width: 1080px;
 		margin: 0 auto;
-		padding: 0 32px;
+		max-width: var(--footer-and-header-max-width);
+		padding: 0 var(--footer-and-header-x-padding);
 	}
 	ul {
 		display: flex;
@@ -33,7 +33,7 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		gap: 32px;
+		gap: var(--navlinks-gap);
 	}
 	li {
 		list-style: none;
