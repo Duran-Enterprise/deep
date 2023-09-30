@@ -35,7 +35,7 @@
 		gap: var(--default-gap);
 		position: relative;
 		background-color: var(--light-contrast);
-		color: var(--black);
+		color: var(--text_black);
 		border-radius: 11px;
 		border: 1px solid;
 		border-color: #000000;
@@ -48,7 +48,7 @@
 	}
 	article.dark > section {
 		background-color: var(--dark-contrast);
-		color: var(--white);
+		color: var(--text_white);
 	}
 	img[data-simple-card] {
 		width: 60px;

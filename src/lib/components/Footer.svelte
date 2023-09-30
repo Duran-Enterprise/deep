@@ -21,7 +21,7 @@
 <div class={$darkMode ? 'dark' : ''}>
 	<footer class="footer">
 		<section>
-			<Branding type="footer" />
+			<Branding />
 
 			<p>© {year} All Rights Reserved</p>
 		</section>
@@ -64,15 +64,13 @@
 		padding: 25px var(--footer-and-header-x-padding);
 	}
 	div {
-		background-color: var(--black);
-		color: var(--white);
+		background-color: var(--light-contrast);
 		height: 50vh;
 		display: flex;
 		transition: var(--bg-and-color-transition);
 	}
 	div.dark {
-		background-color: var(--white);
-		color: var(--black);
+		background-color: var(--dark-contrast);
 	}
 	ul {
 		width: 100%;
