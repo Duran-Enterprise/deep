@@ -43,6 +43,7 @@
 	h1 {
 		margin-bottom: var(--small-whitespace);
 		font-size: var(--large-font-size);
+		font-style: italic;
 	}
 	p {
 		text-wrap: balance;
