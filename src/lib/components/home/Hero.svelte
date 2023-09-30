@@ -44,6 +44,8 @@
 		flex-wrap: wrap;
 	}
 	h1 {
+		/* color: var(--primary); */
+		color: #2d85b4;
 		font-size: var(--large-font-size);
 		line-height: 110%;
 	}
