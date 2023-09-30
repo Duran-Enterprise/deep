@@ -68,7 +68,7 @@
 		width: 199px;
 		height: 48px;
 		border: none;
-		font-size: 1rem;
+		font-size: var(--small-font-size);
 		font-weight: 500;
 		cursor: pointer;
 		box-sizing: border-box;
@@ -83,8 +83,10 @@
 	button:after {
 		content: '»';
 		position: absolute;
-		opacity: 0;
-		top: 14px;
+		font-size: var(--small-font-size);
+		opacity: 0%;
+		top: 50%;
+		transform: translateY(-55%);
 		right: -20px;
 		transition: 0.5s;
 	}
@@ -100,16 +102,28 @@
 	}
 
 	.primary {
-		background-color: var(--accent);
-		color: var(--black);
+		/* background-color: var(--primary); */
+		background-color: #c45c33;
+		color: var(--primary-highlight);
+		color: #e6e5e5;
 	}
 	.secondary.light {
-		background-color: var(--light-contrast);
-		color: var(--black);
+		background-color: none;
+		box-shadow: unset;
+		color: var(--text_black);
 	}
 	.secondary.dark {
+		background-color: unset;
+		box-shadow: unset;
+		color: var(--text_white);
+	}
+	button.secondary.dark:hover {
+		box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
 		background-color: var(--dark-contrast);
-		color: var(--white);
+	}
+	button.secondary.light:hover {
+		background-color: var(--light-contrast);
+		box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
 	}
 	.small {
 		width: 150px;
@@ -125,9 +139,5 @@
 	}
 	button:hover {
 		transform: scale(var(--hover-scale));
-	}
-	.primary:hover {
-		background-color: var(--accent-hover);
-		color: white;
 	}
 </style>
