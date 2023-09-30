@@ -2,16 +2,21 @@
 
 :root {
 	/* Colors */
-	--raw-white: 214, 216, 226;
-	--raw-black: 0, 6, 10;
+	--raw-white: 240, 242, 245;
+	--raw-black: 24, 25, 26;
+	--raw-white-text: 231, 230, 229;
+	--raw-black-text: 15, 13, 10;
 	--raw-primary: 22, 119, 172;
 	--raw-secondary: 196, 233, 253;
 	--raw-accent: 7, 157, 237;
-	--raw-dark-contrast: 34, 32, 32;
-	--raw-light-contrast: 220, 223, 240;
+	--raw-dark-contrast: 36, 37, 38;
+	--raw-light-contrast: 255, 255, 255;
 
-	--white: rgba(var(--raw-white));
-	--black: rgba(var(--raw-black));
+	--bg_white: rgba(var(--raw-white));
+	--bg_black: rgba(var(--raw-black));
+	--text_white: rgba(var(--raw-white));
+	--text_black: rgba(var(--raw-black));
+
 	--primary: rgba(var(--raw-primary));
 	--secondary: rgba(var(--raw-secondary));
 	--accent: rgba(var(--raw-accent));
@@ -21,6 +26,8 @@
 	--hover-opacity: 0.9;
 	--hover-brightness: 1.1;
 	--hover-scale: 1.05, 1.05;
+
+	--primary-highlight: #a05834;
 
 	/* Hover Colors */
 	--primary-hover: rgba(var(--raw-primary), var(--hover-opacity));
@@ -57,23 +64,23 @@ html {
 }
 @media screen and (prefers-color-scheme: dark) {
 	:root {
-		background-color: var(--black);
+		background-color: var(--bg_black);
 	}
 }
 
 @media screen and (prefers-color-scheme: light) {
 	:root {
-		background-color: var(--white);
+		background-color: var(--bg_white);
 	}
 }
 body {
-	color: var(--black);
-	background-color: var(--white);
+	color: var(--text_black);
+	background-color: var(--bg_white);
 	transition: var(--bg-and-color-transition);
 }
 body.dark {
-	color: var(--white);
-	background-color: var(--black);
+	color: var(--text_white);
+	background-color: var(--bg_black);
 }
 
 li {

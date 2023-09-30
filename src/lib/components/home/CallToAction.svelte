@@ -1,10 +1,50 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import Typewriter from '$lib/utils/Typewriter';
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	let h1Element: Element;
+	$: inScreen = false;
+	onMount(() => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					typingAnimation();
+				} else {
+					untypingAnimation();
+				}
+			});
+		});
+
+		observer.observe(h1Element);
+
+		return () => {
+			observer.unobserve(h1Element);
+		};
+	});
+
+	function typingAnimation() {
+		console.log('yep');
+		inScreen = true;
+	}
+
+	function untypingAnimation() {
+		inScreen = false;
+	}
+</script>
 
 <section class="call-to-action">
-	<h1>
-		Start your coding journey
-		<span>now</span>!
-	</h1>
+	<div bind:this={h1Element} data-trigger>
+		{#if inScreen}
+			<h1
+				in:Typewriter={{}}
+				out:fade={{ duration: 500 }}
+				aria-label="Start your coding journey now!"
+			>
+				Start your coding journey
+				<span>now</span>!
+			</h1>
+		{/if}
+	</div>
 	<ul>
 		<li><a href="/">HTML</a></li>
 		<li>❖</li>
@@ -17,6 +57,9 @@
 </section>
 
 <style>
+	div[data-trigger] {
+		padding: 0;
+	}
 	section {
 		display: flex;
 		flex-direction: column;
