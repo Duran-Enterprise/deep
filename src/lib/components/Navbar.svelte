@@ -1,14 +1,13 @@
 <script>
 	import DarkModeToggle from './primitive/DarkModeToggle.svelte';
 	import Branding from './primitive/Branding.svelte';
-	import SimpleButton from './primitive/SimpleButton.svelte';
 </script>
 
 <nav class="navbar">
 	<a href="/"> <Branding /></a>
 
 	<ul class="div">
-		<DarkModeToggle />
+		<li><DarkModeToggle /></li>
 		<li class="hover-effect"><a href="/">Home</a></li>
 		<li class="hover-effect"><a href="/">Courses</a></li>
 		<li class="hover-effect"><a href="/">Projects</a></li>
@@ -44,5 +43,8 @@
 	a {
 		text-decoration: none;
 		color: inherit;
+	}
+	li:first-child {
+		padding-top: 4px;
 	}
 </style>
