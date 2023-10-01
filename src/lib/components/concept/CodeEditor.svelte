@@ -53,11 +53,11 @@
 	/>
 	<ul data-controls>
 		<li data-font-size>
-			<button on:click={decreaseFontSize}> - </button>
+			<button class="hover-effect" on:click={decreaseFontSize}> - </button>
 			Font Size ({$fontSize})
-			<button on:click={increaseFontSize}> + </button>
+			<button class="hover-effect" on:click={increaseFontSize}> + </button>
 		</li>
-		<li><button on:click={formatHtmlString}>Format</button></li>
+		<li><button class="hover-effect" on:click={formatHtmlString}>Format</button></li>
 	</ul>
 </section>
 
@@ -110,7 +110,7 @@
 		margin: 0 5px;
 		cursor: pointer;
 	}
-
+	/* 
 	button::after {
 		content: '';
 		position: absolute;
@@ -132,5 +132,5 @@
 		color: #dad128;
 		transform: scale(var(--hover-scale));
 		transition: 0.3s;
-	}
+	} */
 </style>

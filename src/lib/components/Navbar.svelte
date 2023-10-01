@@ -1,17 +1,20 @@
 <script>
 	import DarkModeToggle from './primitive/DarkModeToggle.svelte';
 	import Branding from './primitive/Branding.svelte';
+	import SimpleButton from './primitive/SimpleButton.svelte';
 </script>
 
 <nav class="navbar">
-	<Branding />
+	<a href="/"> <Branding /></a>
 
 	<ul class="div">
 		<DarkModeToggle />
-		<li><a href="/">Home</a></li>
-		<li><a href="/">Courses</a></li>
-		<li><a href="/">Projects</a></li>
-		<li><a href="/">Login</a></li>
+		<li class="hover-effect"><a href="/">Home</a></li>
+		<li class="hover-effect"><a href="/">Courses</a></li>
+		<li class="hover-effect"><a href="/">Projects</a></li>
+		<li class="hover-effect">
+			<a href="/concept">Check concept</a>
+		</li>
 	</ul>
 </nav>
 
