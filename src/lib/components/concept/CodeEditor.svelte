@@ -9,8 +9,6 @@
 
 	function formatHtmlString() {
 		try {
-			// I need to write a function here that will format htmlString nicely, doesnt have to be prettier, any working solution will do.
-
 			htmlString = beautify.html(htmlString);
 		} catch (error) {
 			console.error('Error formatting HTML:', error);
@@ -56,7 +54,7 @@
 	<ul data-controls>
 		<li data-font-size>
 			<button on:click={decreaseFontSize}> - </button>
-			Font Size
+			Font Size ({$fontSize})
 			<button on:click={increaseFontSize}> + </button>
 		</li>
 		<li><button on:click={formatHtmlString}>Format</button></li>
@@ -95,7 +93,7 @@
 		background-color: #dad128;
 	}
 	li {
-		width: 160px;
+		width: 190px;
 		display: flex;
 		align-items: center;
 		justify-content: center;

@@ -50,5 +50,8 @@
 	section {
 		max-width: var(--max-width);
 		padding: 20px;
+		margin: 0 20px;
+		border-radius: 25px;
+		background-color: #ffffff;
 	}
 </style>
