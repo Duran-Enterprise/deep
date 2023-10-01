@@ -25,10 +25,12 @@
 <div>
 	<main class="course-banner">
 		<h1>The D.E.E.P. Project</h1>
-		<p>
-			D.E.E.P. stands for Dedication, Empowerment, Education, and Programming — the foundation of
-			our mission to provide accessible, project-based learning for all aspiring programmers.
-		</p>
+		<div>
+			<p>
+				D.E.E.P. stands for Dedication, Empowerment, Education, and Programming — the foundation of
+				our mission to provide accessible, project-based learning for all aspiring programmers.
+			</p>
+		</div>
 		<ul>
 			{#each Object.values(courses) as course}
 				<li>
@@ -43,6 +45,12 @@
 	h1 {
 		margin-bottom: var(--small-whitespace);
 		font-size: var(--large-font-size);
+		font-style: italic;
+	}
+	div:has(> p) {
+		border: 2px solid red;
+		margin: 0 auto;
+		max-width: 50ch;
 	}
 	p {
 		text-wrap: balance;
