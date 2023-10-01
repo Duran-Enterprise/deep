@@ -48,7 +48,6 @@
 		font-style: italic;
 	}
 	div:has(> p) {
-		border: 2px solid red;
 		margin: 0 auto;
 		max-width: 50ch;
 	}
