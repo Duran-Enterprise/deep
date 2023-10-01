@@ -107,3 +107,26 @@ textarea {
 	color: var(--text_black);
 	background-color: var(--light-contrast);
 }
+
+.hover-effect::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0%;
+	transform: scaleX(0);
+	width: 0;
+	height: 2px;
+	background-color: #dad128;
+	transition: transform 0.3s;
+}
+
+.hover-effect:hover::after {
+	transform-origin: center;
+	transform: scaleX(1);
+	width: 100%;
+}
+.hover-effect:hover {
+	color: #dad128;
+	transform: scale(var(--hover-scale));
+	transition: 0.3s;
+}
