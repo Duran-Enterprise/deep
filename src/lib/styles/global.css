@@ -83,6 +83,27 @@ body.dark {
 	background-color: var(--bg_black);
 }
 
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--dark-contrast);
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary);
+}
+
 li {
 	list-style: none;
+}
+body.dark textarea {
+	color: var(--text_white);
+	background-color: var(--dark-contrast);
+}
+textarea {
+	color: var(--text_black);
+	background-color: var(--light-contrast);
 }
