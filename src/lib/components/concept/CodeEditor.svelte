@@ -10,6 +10,34 @@
 	export let rawString: string;
 	/* eslint-disable  @typescript-eslint/no-explicit-any */
 	let lang: any;
+
+	import { onMount } from 'svelte';
+
+	let divElement: HTMLDivElement;
+	onMount(() => {
+		function preventCopyAndPaste(element: HTMLElement) {
+			element.addEventListener('copy', (e: ClipboardEvent) => {
+				e.preventDefault();
+			});
+			element.addEventListener('cut', (e: ClipboardEvent) => {
+				e.preventDefault();
+			});
+
+			element.addEventListener('paste', (e: ClipboardEvent) => {
+				e.preventDefault();
+			});
+
+			Array.from(element.children).forEach((child) => {
+				if (child instanceof HTMLElement) {
+					preventCopyAndPaste(child);
+				}
+			});
+		}
+		if (divElement) {
+			preventCopyAndPaste(divElement);
+		}
+	});
+
 	$: switch (language) {
 		case 'html':
 			lang = html;
@@ -48,7 +76,8 @@
 		display: 'block',
 		padding: '10px 20px 0 20px',
 		borderRadius: '0',
-		overflow: 'auto'
+		overflow: 'auto',
+		userSelect: 'none'
 	};
 
 	function increaseFontSize() {
@@ -61,19 +90,22 @@
 </script>
 
 <section>
-	<CodeMirror
-		bind:value={rawString}
-		theme={oneDark}
-		lang={lang()}
-		styles={{
-			'&': {
-				...styles,
-				fontSize: `${$codeEditorFontSize}px`
-			}
-		}}
-		useTab={true}
-		lineWrapping={true}
-	/>
+	<div bind:this={divElement}>
+		<CodeMirror
+			bind:value={rawString}
+			theme={oneDark}
+			lang={lang()}
+			styles={{
+				'&': {
+					...styles,
+					fontSize: `${$codeEditorFontSize}px`
+				}
+			}}
+			useTab={true}
+			lineWrapping={true}
+		/>
+	</div>
+
 	<ul data-controls>
 		<li data-font-size>
 			<button class="hover-effect" on:click={decreaseFontSize}> - </button>

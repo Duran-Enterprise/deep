@@ -1,5 +1,7 @@
 <script lang="ts">
 	import CodeEditor from '$lib/components/concept/CodeEditor.svelte';
+	import { onDestroy } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	let rawHTMLString = `<h1>The DEEP Project</h1>`;
 	let rawCssString = `h1 {
@@ -61,28 +63,65 @@
 		}
 		return activeTabValue;
 	}
+	let loading = false;
+	let timeoutId: number | undefined;
+
+	// Separate reactive statements for each variable
 	$: {
+		let htmlChanged = language === 'html' && rawHTMLString !== code;
+		let cssChanged = language === 'css' && rawCssString !== code;
+		let jsChanged = language === 'js' && rawJavascriptString !== code;
+
+		if (htmlChanged || cssChanged || jsChanged) {
+			debounce(updateCode, 1000);
+		}
+	}
+
+	function debounce(callback: { (): void; (): void }, delay: number | undefined) {
+		clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => {
+			callback();
+		}, delay);
+	}
+
+	function updateCode() {
+		if (language === 'html' && rawHTMLString !== code) {
+			loading = true;
+			rawHTMLString = code;
+		} else if (language === 'css' && rawCssString !== code) {
+			loading = true;
+			rawCssString = code;
+		} else if (language === 'js' && rawJavascriptString !== code) {
+			loading = true;
+			rawJavascriptString = code;
+		}
+
 		setTimeout(() => {
-			if (language === 'html') {
-				rawHTMLString = code;
-			} else if (language === 'css') {
-				rawCssString = code;
-			} else {
-				rawJavascriptString = code;
-			}
-		}, 300);
+			loading = false;
+		}, 500);
 	}
 </script>
 
 <main>
-	<section>
-		<iframe
-			srcdoc={rawHTML}
-			title="DEEP Project web container"
-			frameborder="0"
-			width="100%"
-			height="100%"
-		/>
+	<section data-loading={loading}>
+		{#if !loading}
+			<iframe
+				on:load={() => {
+					const iframe = document.getElementById('iframe');
+					if (iframe) {
+						iframe.style.visibility = 'visible';
+					}
+				}}
+				transition:fade={{ duration: 500 }}
+				id="iframe"
+				srcdoc={rawHTML}
+				title="DEEP Project web container"
+				frameborder="0"
+				width="100%"
+				height="100%"
+				loading="lazy"
+			/>
+		{/if}
 	</section>
 	<div>
 		<ul>
@@ -101,6 +140,9 @@
 </main>
 
 <style>
+	iframe {
+		visibility: hidden;
+	}
 	main {
 		max-width: var(--max-width);
 		padding: 0 var(--small-whitespace);
@@ -111,12 +153,14 @@
 		margin: 0 auto;
 	}
 	section {
+		position: relative;
 		max-width: var(--max-width);
 		padding: 20px;
 		margin: 0 20px;
 		border-radius: 25px;
 		background-color: #ffffff;
 	}
+
 	div {
 		padding: 0;
 	}
@@ -144,6 +188,7 @@
 		padding: 5px 10px;
 		margin: 0 5px;
 		cursor: pointer;
+		color: var(--text_white);
 	}
 
 	li.active > button {
