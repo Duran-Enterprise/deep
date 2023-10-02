@@ -12,19 +12,33 @@
 	let lang: any;
 
 	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 
 	let divElement: HTMLDivElement;
+	let showModal = false;
 	onMount(() => {
 		function preventCopyAndPaste(element: HTMLElement) {
+			function show() {
+				showModal = true;
+				setTimeout(() => {
+					showModal = false;
+				}, 2000);
+			}
+
 			element.addEventListener('copy', (e: ClipboardEvent) => {
 				e.preventDefault();
+				show();
 			});
 			element.addEventListener('cut', (e: ClipboardEvent) => {
+				showModal = true;
 				e.preventDefault();
+				show();
 			});
 
 			element.addEventListener('paste', (e: ClipboardEvent) => {
+				showModal = true;
 				e.preventDefault();
+				show();
 			});
 
 			Array.from(element.children).forEach((child) => {
@@ -91,6 +105,11 @@
 
 <section>
 	<div bind:this={divElement}>
+		{#if showModal}
+			<div class="modal" transition:fly={{ x: 200, duration: 500 }}>
+				Copy, Cut, and Paste are not allowed in this section.
+			</div>
+		{/if}
 		<CodeMirror
 			bind:value={rawString}
 			theme={oneDark}
@@ -117,6 +136,20 @@
 </section>
 
 <style>
+	.modal {
+		position: absolute;
+		top: -100;
+		left: 0;
+		width: 100%;
+		background-color: #ff0000;
+		color: #fff;
+		padding: 10px;
+		text-align: center;
+		z-index: 0999999999999999999;
+	}
+	div {
+		position: relative;
+	}
 	section {
 		display: flex;
 		flex-direction: column;
