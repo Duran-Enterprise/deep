@@ -6,6 +6,7 @@
 	color: #1474ac;
 	text-align: center;
 }`;
+	const closingTag = '</scr';
 	let rawJavascriptString = ``;
 	$: rawHTML = `<!DOCTYPE html>
 <html lang="en">
@@ -35,7 +36,7 @@
 	<body>
 		${rawHTMLString}
 		
-		<script> ${rawJavascriptString} </script >	
+		<script> ${rawJavascriptString} 	${closingTag}ipt>
 	</body>
 </html>`;
 
