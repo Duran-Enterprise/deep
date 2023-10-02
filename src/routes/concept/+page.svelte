@@ -1,6 +1,5 @@
 <script lang="ts">
 	import CodeEditor from '$lib/components/concept/CodeEditor.svelte';
-	import { onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	let rawHTMLString = `<h1>The DEEP Project</h1>`;
@@ -66,7 +65,6 @@
 	let loading = false;
 	let timeoutId: number | undefined;
 
-	// Separate reactive statements for each variable
 	$: {
 		let htmlChanged = language === 'html' && rawHTMLString !== code;
 		let cssChanged = language === 'css' && rawCssString !== code;
